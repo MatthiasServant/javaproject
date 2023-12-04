@@ -2,6 +2,8 @@ package com.javaproject.controller;
 
 import com.javaproject.model.Book;
 import com.javaproject.service.BookService;
+import org.springframework.http.HttpRequest;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -44,6 +46,6 @@ public class BookController {
     //Méthode qui créer un livre
     @PostMapping()
     public ResponseEntity<Book> createBook(@RequestBody Book book){
-        return ResponseEntity.ok(bookService.createBook(book));
+        return new ResponseEntity<>(bookService.createBook(book), HttpStatus.CREATED);
     }
 }

@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -23,7 +24,7 @@ public class Book {
 
     private String author;
 
-    private Date publicationDate;
+    private LocalDate publicationDate;
 
     private int stock;
 }
